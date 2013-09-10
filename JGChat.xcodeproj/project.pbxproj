@@ -1,0 +1,355 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13ADE75A17DE48E400D6A6CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13ADE75917DE48E400D6A6CD /* UIKit.framework */; };
+		13ADE75C17DE48E400D6A6CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13ADE75B17DE48E400D6A6CD /* Foundation.framework */; };
+		13ADE75E17DE48E400D6A6CD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13ADE75D17DE48E400D6A6CD /* CoreGraphics.framework */; };
+		13ADE76417DE48E400D6A6CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 13ADE76217DE48E400D6A6CD /* InfoPlist.strings */; };
+		13ADE76617DE48E400D6A6CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ADE76517DE48E400D6A6CD /* main.m */; };
+		13ADE76A17DE48E400D6A6CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13ADE76917DE48E400D6A6CD /* AppDelegate.m */; };
+		13ADE76C17DE48E400D6A6CD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 13ADE76B17DE48E400D6A6CD /* Default.png */; };
+		13ADE76E17DE48E400D6A6CD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13ADE76D17DE48E400D6A6CD /* Default@2x.png */; };
+		13ADE77017DE48E400D6A6CD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13ADE76F17DE48E400D6A6CD /* Default-568h@2x.png */; };
+		13ADE77317DE48E400D6A6CD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13ADE77117DE48E400D6A6CD /* MainStoryboard.storyboard */; };
+		13C24AFD17DE87D500CFD264 /* ChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C24AFC17DE87D500CFD264 /* ChatTableViewController.m */; };
+		13C24B0017DEA33B00CFD264 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C24AFF17DEA33B00CFD264 /* UsersViewController.m */; };
+		502BAB7B94C744ACB3442FE4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4F5196FB2C46D6A5CF0863 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		13ADE75617DE48E400D6A6CD /* JGChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JGChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13ADE75917DE48E400D6A6CD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		13ADE75B17DE48E400D6A6CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		13ADE75D17DE48E400D6A6CD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		13ADE76117DE48E400D6A6CD /* JGChat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JGChat-Info.plist"; sourceTree = "<group>"; };
+		13ADE76317DE48E400D6A6CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		13ADE76517DE48E400D6A6CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		13ADE76717DE48E400D6A6CD /* JGChat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JGChat-Prefix.pch"; sourceTree = "<group>"; };
+		13ADE76817DE48E400D6A6CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		13ADE76917DE48E400D6A6CD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		13ADE76B17DE48E400D6A6CD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		13ADE76D17DE48E400D6A6CD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		13ADE76F17DE48E400D6A6CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		13ADE77217DE48E400D6A6CD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		13C24AFB17DE87D500CFD264 /* ChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewController.h; sourceTree = "<group>"; };
+		13C24AFC17DE87D500CFD264 /* ChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewController.m; sourceTree = "<group>"; };
+		13C24AFE17DEA33B00CFD264 /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsersViewController.h; path = ../UsersViewController.h; sourceTree = "<group>"; };
+		13C24AFF17DEA33B00CFD264 /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsersViewController.m; path = ../UsersViewController.m; sourceTree = "<group>"; };
+		37068BF46C0B46E7917D7952 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		CC4F5196FB2C46D6A5CF0863 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13ADE75317DE48E400D6A6CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13ADE75A17DE48E400D6A6CD /* UIKit.framework in Frameworks */,
+				13ADE75C17DE48E400D6A6CD /* Foundation.framework in Frameworks */,
+				13ADE75E17DE48E400D6A6CD /* CoreGraphics.framework in Frameworks */,
+				502BAB7B94C744ACB3442FE4 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13ADE74D17DE48E400D6A6CD = {
+			isa = PBXGroup;
+			children = (
+				13ADE75F17DE48E400D6A6CD /* JGChat */,
+				13ADE75817DE48E400D6A6CD /* Frameworks */,
+				13ADE75717DE48E400D6A6CD /* Products */,
+				37068BF46C0B46E7917D7952 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		13ADE75717DE48E400D6A6CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13ADE75617DE48E400D6A6CD /* JGChat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		13ADE75817DE48E400D6A6CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13ADE75917DE48E400D6A6CD /* UIKit.framework */,
+				13ADE75B17DE48E400D6A6CD /* Foundation.framework */,
+				13ADE75D17DE48E400D6A6CD /* CoreGraphics.framework */,
+				CC4F5196FB2C46D6A5CF0863 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		13ADE75F17DE48E400D6A6CD /* JGChat */ = {
+			isa = PBXGroup;
+			children = (
+				13C24AFE17DEA33B00CFD264 /* UsersViewController.h */,
+				13C24AFF17DEA33B00CFD264 /* UsersViewController.m */,
+				13ADE76817DE48E400D6A6CD /* AppDelegate.h */,
+				13ADE76917DE48E400D6A6CD /* AppDelegate.m */,
+				13ADE77117DE48E400D6A6CD /* MainStoryboard.storyboard */,
+				13ADE76017DE48E400D6A6CD /* Supporting Files */,
+				13C24AFB17DE87D500CFD264 /* ChatTableViewController.h */,
+				13C24AFC17DE87D500CFD264 /* ChatTableViewController.m */,
+			);
+			path = JGChat;
+			sourceTree = "<group>";
+		};
+		13ADE76017DE48E400D6A6CD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				13ADE76117DE48E400D6A6CD /* JGChat-Info.plist */,
+				13ADE76217DE48E400D6A6CD /* InfoPlist.strings */,
+				13ADE76517DE48E400D6A6CD /* main.m */,
+				13ADE76717DE48E400D6A6CD /* JGChat-Prefix.pch */,
+				13ADE76B17DE48E400D6A6CD /* Default.png */,
+				13ADE76D17DE48E400D6A6CD /* Default@2x.png */,
+				13ADE76F17DE48E400D6A6CD /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13ADE75517DE48E400D6A6CD /* JGChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13ADE77917DE48E400D6A6CD /* Build configuration list for PBXNativeTarget "JGChat" */;
+			buildPhases = (
+				453589B412E14D00B070B05D /* Check Pods Manifest.lock */,
+				13ADE75217DE48E400D6A6CD /* Sources */,
+				13ADE75317DE48E400D6A6CD /* Frameworks */,
+				13ADE75417DE48E400D6A6CD /* Resources */,
+				777F08B1B53245AA921BE761 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JGChat;
+			productName = JGChat;
+			productReference = 13ADE75617DE48E400D6A6CD /* JGChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		13ADE74E17DE48E400D6A6CD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Javier Giovannini";
+			};
+			buildConfigurationList = 13ADE75117DE48E400D6A6CD /* Build configuration list for PBXProject "JGChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 13ADE74D17DE48E400D6A6CD;
+			productRefGroup = 13ADE75717DE48E400D6A6CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13ADE75517DE48E400D6A6CD /* JGChat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13ADE75417DE48E400D6A6CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13ADE76417DE48E400D6A6CD /* InfoPlist.strings in Resources */,
+				13ADE76C17DE48E400D6A6CD /* Default.png in Resources */,
+				13ADE76E17DE48E400D6A6CD /* Default@2x.png in Resources */,
+				13ADE77017DE48E400D6A6CD /* Default-568h@2x.png in Resources */,
+				13ADE77317DE48E400D6A6CD /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		453589B412E14D00B070B05D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		777F08B1B53245AA921BE761 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13ADE75217DE48E400D6A6CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13ADE76617DE48E400D6A6CD /* main.m in Sources */,
+				13ADE76A17DE48E400D6A6CD /* AppDelegate.m in Sources */,
+				13C24AFD17DE87D500CFD264 /* ChatTableViewController.m in Sources */,
+				13C24B0017DEA33B00CFD264 /* UsersViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		13ADE76217DE48E400D6A6CD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13ADE76317DE48E400D6A6CD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		13ADE77117DE48E400D6A6CD /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13ADE77217DE48E400D6A6CD /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		13ADE77717DE48E400D6A6CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		13ADE77817DE48E400D6A6CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		13ADE77A17DE48E400D6A6CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37068BF46C0B46E7917D7952 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JGChat/JGChat-Prefix.pch";
+				INFOPLIST_FILE = "JGChat/JGChat-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		13ADE77B17DE48E400D6A6CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37068BF46C0B46E7917D7952 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JGChat/JGChat-Prefix.pch";
+				INFOPLIST_FILE = "JGChat/JGChat-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13ADE75117DE48E400D6A6CD /* Build configuration list for PBXProject "JGChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13ADE77717DE48E400D6A6CD /* Debug */,
+				13ADE77817DE48E400D6A6CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13ADE77917DE48E400D6A6CD /* Build configuration list for PBXNativeTarget "JGChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13ADE77A17DE48E400D6A6CD /* Debug */,
+				13ADE77B17DE48E400D6A6CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 13ADE74E17DE48E400D6A6CD /* Project object */;
+}
