@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_AMBubbleTableViewController 3
 #define COCOAPODS_VERSION_PATCH_AMBubbleTableViewController 5
 
+// DAKeyboardControl
+#define COCOAPODS_POD_AVAILABLE_DAKeyboardControl
+#define COCOAPODS_VERSION_MAJOR_DAKeyboardControl 2
+#define COCOAPODS_VERSION_MINOR_DAKeyboardControl 2
+#define COCOAPODS_VERSION_PATCH_DAKeyboardControl 0
+
 // Facebook-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK
 #define COCOAPODS_VERSION_MAJOR_Facebook_iOS_SDK 3

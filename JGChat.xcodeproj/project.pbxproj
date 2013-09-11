@@ -17,8 +17,10 @@
 		13ADE76E17DE48E400D6A6CD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13ADE76D17DE48E400D6A6CD /* Default@2x.png */; };
 		13ADE77017DE48E400D6A6CD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 13ADE76F17DE48E400D6A6CD /* Default-568h@2x.png */; };
 		13ADE77317DE48E400D6A6CD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13ADE77117DE48E400D6A6CD /* MainStoryboard.storyboard */; };
-		13C24AFD17DE87D500CFD264 /* ChatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C24AFC17DE87D500CFD264 /* ChatTableViewController.m */; };
 		13C24B0017DEA33B00CFD264 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C24AFF17DEA33B00CFD264 /* UsersViewController.m */; };
+		13FF453F17DFCBF50014E6A4 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FF453E17DFCBF50014E6A4 /* ChatViewController.m */; };
+		13FF454217DFE0940014E6A4 /* UserCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FF454117DFE0940014E6A4 /* UserCellView.m */; };
+		13FF454517DFE33C0014E6A4 /* ChatCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FF454417DFE33C0014E6A4 /* ChatCellView.m */; };
 		502BAB7B94C744ACB3442FE4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4F5196FB2C46D6A5CF0863 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -37,10 +39,14 @@
 		13ADE76D17DE48E400D6A6CD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		13ADE76F17DE48E400D6A6CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		13ADE77217DE48E400D6A6CD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		13C24AFB17DE87D500CFD264 /* ChatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewController.h; sourceTree = "<group>"; };
-		13C24AFC17DE87D500CFD264 /* ChatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewController.m; sourceTree = "<group>"; };
 		13C24AFE17DEA33B00CFD264 /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsersViewController.h; path = ../UsersViewController.h; sourceTree = "<group>"; };
 		13C24AFF17DEA33B00CFD264 /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsersViewController.m; path = ../UsersViewController.m; sourceTree = "<group>"; };
+		13FF453D17DFCBF50014E6A4 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		13FF453E17DFCBF50014E6A4 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		13FF454017DFE0940014E6A4 /* UserCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCellView.h; sourceTree = "<group>"; };
+		13FF454117DFE0940014E6A4 /* UserCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCellView.m; sourceTree = "<group>"; };
+		13FF454317DFE33C0014E6A4 /* ChatCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatCellView.h; sourceTree = "<group>"; };
+		13FF454417DFE33C0014E6A4 /* ChatCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatCellView.m; sourceTree = "<group>"; };
 		37068BF46C0B46E7917D7952 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CC4F5196FB2C46D6A5CF0863 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,14 +98,18 @@
 		13ADE75F17DE48E400D6A6CD /* JGChat */ = {
 			isa = PBXGroup;
 			children = (
+				13FF453D17DFCBF50014E6A4 /* ChatViewController.h */,
+				13FF453E17DFCBF50014E6A4 /* ChatViewController.m */,
 				13C24AFE17DEA33B00CFD264 /* UsersViewController.h */,
 				13C24AFF17DEA33B00CFD264 /* UsersViewController.m */,
 				13ADE76817DE48E400D6A6CD /* AppDelegate.h */,
 				13ADE76917DE48E400D6A6CD /* AppDelegate.m */,
 				13ADE77117DE48E400D6A6CD /* MainStoryboard.storyboard */,
 				13ADE76017DE48E400D6A6CD /* Supporting Files */,
-				13C24AFB17DE87D500CFD264 /* ChatTableViewController.h */,
-				13C24AFC17DE87D500CFD264 /* ChatTableViewController.m */,
+				13FF454017DFE0940014E6A4 /* UserCellView.h */,
+				13FF454117DFE0940014E6A4 /* UserCellView.m */,
+				13FF454317DFE33C0014E6A4 /* ChatCellView.h */,
+				13FF454417DFE33C0014E6A4 /* ChatCellView.m */,
 			);
 			path = JGChat;
 			sourceTree = "<group>";
@@ -221,8 +231,10 @@
 			files = (
 				13ADE76617DE48E400D6A6CD /* main.m in Sources */,
 				13ADE76A17DE48E400D6A6CD /* AppDelegate.m in Sources */,
-				13C24AFD17DE87D500CFD264 /* ChatTableViewController.m in Sources */,
 				13C24B0017DEA33B00CFD264 /* UsersViewController.m in Sources */,
+				13FF453F17DFCBF50014E6A4 /* ChatViewController.m in Sources */,
+				13FF454217DFE0940014E6A4 /* UserCellView.m in Sources */,
+				13FF454517DFE33C0014E6A4 /* ChatCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,6 @@
 PODS:
   - AMBubbleTableViewController (0.3.5)
+  - DAKeyboardControl (2.2.0)
   - Facebook-iOS-SDK (3.7.1)
   - HexColors (2.2.0)
   - Parse (1.2.12):
@@ -9,11 +10,13 @@ PODS:
 
 DEPENDENCIES:
   - AMBubbleTableViewController
+  - DAKeyboardControl
   - Parse
   - TSMessages
 
 SPEC CHECKSUMS:
   AMBubbleTableViewController: 903009b2985695ab7089857d2ea47af6d0c323e7
+  DAKeyboardControl: 3f58b2958b4d6785ee395211c6f175af7eb9de8d
   Facebook-iOS-SDK: bf38d403928f6adb652e2e5ae46253e0c6ba9a19
   HexColors: 72b7e16c2b42cc3dfb17d4a61f64d218d1ccbba7
   Parse: ffb5348c343733688b8af1864cf6a05c3e2f1349

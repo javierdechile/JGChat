@@ -1,20 +1,22 @@
 //
-//  UsersViewController.m
-//  JGChat
+//  ChatViewController.m
+//  
 //
-//  Created by Javier Giovannini on 09-09-13.
-//  Copyright (c) 2013 Javier Giovannini. All rights reserved.
+//  Created by Javier Giovannini on 10-09-13.
+//
 //
 
-#import "UsersViewController.h"
-#import <Parse/Parse.h>
-#import "UserCellView.h"
+#import "ChatViewController.h"
+#import "DAKeyboardControl.h"
+#import "ChatCellView.h"
 
-@interface UsersViewController ()
+@interface ChatViewController ()
 
+@property (nonatomic, strong) UITextField *textField;
+@property (nonatomic, strong) UIButton *sendButton;
 @end
 
-@implementation UsersViewController
+@implementation ChatViewController
 
 - (id)initWithCoder:(NSCoder *)aCoder {
     self = [super initWithCoder:aCoder];
@@ -22,10 +24,10 @@
         // Custom the table
         
         // The className to query on
-        self.parseClassName = @"_User";
+        self.parseClassName = @"Post";
         
         // The key of the PFObject to display in the label of the default cell style
-        self.textKey = @"username";
+        self.textKey = @"textContent";
         
         // Uncomment the following line to specify the key of a PFFile on the PFObject to display in the imageView of the default cell style
         // self.imageKey = @"image";
@@ -50,16 +52,37 @@
 }
 
 
-
+#pragma mark - UIViewController
+- (IBAction)sendButtonPressed:(id)sender {
+    
+    // Create relationship
+    if ([PFUser currentUser]) {
+        // Create Post
+        NSLog(@"user logged");
+        PFObject *newPost = [PFObject objectWithClassName:@"Post"];
+        
+        // Set text content
+        [newPost setObject:[NSString stringWithFormat:@"%@",[NSDate date] ] forKey:@"textContent"];
+        [newPost setObject:[PFUser currentUser] forKey:@"author"];
+        [newPost setObject:[[PFUser currentUser] objectForKey:@"username"] forKey:@"author_username"];
+        // Save the new post
+        [newPost saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                // Dismiss the NewPostViewController and show the BlogTableViewController
+                //[self dismissModalViewControllerAnimated:YES];
+                [self queryForTable];
+                [self.tableView reloadData];
+            }
+        }];
+    }
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload {
@@ -70,6 +93,24 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    if (![PFUser currentUser]) {
+        NSLog(@"must be logged first");
+        // Create the log in view controller
+        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        [logInViewController setDelegate:self]; // Set ourselves as the delegate
+        //        [logInViewController setFacebookPermissions:[NSArray arrayWithObjects:@"friends_about_me", nil]];
+        //        [logInViewController setFields: PFLogInFieldsTwitter | PFLogInFieldsFacebook | PFLogInFieldsDismissButton];
+        // Create the sign up view controller
+        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+        
+        // Assign our sign up controller to be displayed from the login controller
+        [logInViewController setSignUpController:signUpViewController];
+        
+        // Present the log in view controller
+        [self presentViewController:logInViewController animated:YES completion:NULL];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -105,43 +146,45 @@
 }
 
 
- // Override to customize what kind of query to perform on the class. The default is to query for
- // all objects ordered by createdAt descending.
- - (PFQuery *)queryForTable {
- PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
- 
- // If Pull To Refresh is enabled, query against the network by default.
- if (self.pullToRefreshEnabled) {
- query.cachePolicy = kPFCachePolicyNetworkOnly;
- }
- 
- // If no objects are loaded in memory, we look to the cache first to fill the table
- // and then subsequently do a query against the network.
- if (self.objects.count == 0) {
- query.cachePolicy = kPFCachePolicyCacheThenNetwork;
- }
- 
- [query orderByDescending:@"username"];
- 
- return query;
- }
- 
+// Override to customize what kind of query to perform on the class. The default is to query for
+// all objects ordered by createdAt descending.
+- (PFQuery *)queryForTable {
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    
+    // If Pull To Refresh is enabled, query against the network by default.
+    if (self.pullToRefreshEnabled) {
+        query.cachePolicy = kPFCachePolicyNetworkOnly;
+    }
+    
+    // If no objects are loaded in memory, we look to the cache first to fill the table
+    // and then subsequently do a query against the network.
+    if (self.objects.count == 0) {
+        query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    }
+    
+    [query orderByDescending:@"createdAt"];
+    
+    return query;
+}
 
 
- // Override to customize the look of a cell representing an object. The default is to display
- // a UITableViewCellStyleDefault style cell with the label being the textKey in the object,
+
+// Override to customize the look of a cell representing an object. The default is to display
+// a UITableViewCellStyleDefault style cell with the label being the textKey in the object,
 // and the imageView being the imageKey in the object.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
-    static NSString *CellIdentifier = @"UserCell";
+    static NSString *CellIdentifier = @"ChatCell";
     
-    UserCellView *cell = (UserCellView *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    ChatCellView *cell = (ChatCellView *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UserCellView alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[ChatCellView alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell
-    cell.usernameLabel.text = [object objectForKey:self.textKey];
-
+    cell.messageTextView.text = [object objectForKey:self.textKey];
+    cell.nameLabel.text = [object objectForKey:@"author_username"];
+    cell.timeLabel.text = [object objectForKey:@"createdAt"];
+    
     NSLog(@"%@", object);
     
     //cell.imageView.file = [object objectForKey:self.imageKey];
@@ -213,10 +256,8 @@
 
 #pragma mark - UITableViewDelegate
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
-//    [self performSegueWithIdentifier:@"chatFromUser" sender:nil];
-//}
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+}
 
 @end

@@ -1,4 +1,5 @@
 platform :ios, '6.0'
+pod 'DAKeyboardControl'
 pod 'Parse'
 pod 'AMBubbleTableViewController'
 pod 'TSMessages'
