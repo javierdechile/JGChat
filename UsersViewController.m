@@ -140,6 +140,7 @@
     }
     
     // Configure the cell
+
     cell.usernameLabel.text = [object objectForKey:self.textKey];
 
     NSLog(@"%@", object);

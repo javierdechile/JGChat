@@ -4,12 +4,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Chat View Controller - Chat-->
+        <!--Chat View Controller-->
         <scene sceneID="0Mf-zj-Ldq">
             <objects>
                 <tableViewController id="sOC-9g-K3j" customClass="ChatViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="57" sectionHeaderHeight="22" sectionFooterHeight="22" id="6Nl-ha-aAp">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -39,7 +39,6 @@
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYt-rI-zre">
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="230" id="J04-W6-DQw"/>
                                                 <constraint firstAttribute="height" constant="44" id="WBj-0B-9IW"/>
@@ -51,7 +50,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.45882352939999999" blue="0.18823529410000001" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstItem="4ZL-ZJ-Vx3" firstAttribute="top" secondItem="sC2-cv-vYW" secondAttribute="top" constant="24" id="JIy-Pb-GOZ"/>
                                     <constraint firstItem="5kd-DS-f6B" firstAttribute="leading" secondItem="sC2-cv-vYW" secondAttribute="leading" constant="9" id="YuN-Bu-Gl5"/>
@@ -72,8 +70,36 @@
                             <outlet property="delegate" destination="sOC-9g-K3j" id="arR-bn-NTg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Chat" id="abJ-JS-sgC"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" id="abJ-JS-sgC">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="TZD-c9-ocG">
+                            <rect key="frame" x="14" y="7" width="222" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="pMH-yy-xUS">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oaZ-PS-5Bh">
+                                <rect key="frame" x="244" y="5" width="71" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="send">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="sOC-9g-K3j" eventType="touchUpInside" id="GEq-uq-mXD"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="textInput" destination="TZD-c9-ocG" id="bB3-VL-l8s"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSE-jB-kwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -166,6 +192,9 @@
         </class>
         <class className="ChatViewController" superclassName="PFQueryTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ChatViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textInput" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

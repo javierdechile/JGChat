@@ -50,11 +50,9 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
-
-
-#pragma mark - UIViewController
 - (IBAction)sendButtonPressed:(id)sender {
     
+    NSLog(@"send button pressed");
     // Create relationship
     if ([PFUser currentUser]) {
         // Create Post
@@ -62,7 +60,7 @@
         PFObject *newPost = [PFObject objectWithClassName:@"Post"];
         
         // Set text content
-        [newPost setObject:[NSString stringWithFormat:@"%@",[NSDate date] ] forKey:@"textContent"];
+        [newPost setObject:self.textInput.text forKey:@"textContent"];
         [newPost setObject:[PFUser currentUser] forKey:@"author"];
         [newPost setObject:[[PFUser currentUser] objectForKey:@"username"] forKey:@"author_username"];
         // Save the new post
@@ -71,12 +69,15 @@
                 // Dismiss the NewPostViewController and show the BlogTableViewController
                 //[self dismissModalViewControllerAnimated:YES];
                 [self queryForTable];
-                [self.tableView reloadData];
+                [self loadObjects]; //reloads data from server
             }
         }];
+        
+        self.textInput.text = @"";
     }
-    
 }
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -180,12 +181,22 @@
         cell = [[ChatCellView alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
+    
+    NSLog(@"author: %@, current %@", [object objectForKey:@"author_username"], [[PFUser currentUser] objectForKey:@"username"]);
+
     // Configure the cell
     cell.messageTextView.text = [object objectForKey:self.textKey];
     cell.nameLabel.text = [object objectForKey:@"author_username"];
+    
     cell.timeLabel.text = [object objectForKey:@"createdAt"];
     
-    NSLog(@"%@", object);
+    
+    if ([[object objectForKey:@"author_username"] isEqualToString:[[PFUser currentUser] objectForKey:@"username"]] ) {
+        [cell setupCellWithStyle:@"right"];
+    }
+    else{
+        [cell setupCellWithStyle:@"left"];
+    }
     
     //cell.imageView.file = [object objectForKey:self.imageKey];
     
